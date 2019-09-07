@@ -1,0 +1,38 @@
+mov r1,1
+mov r2,0
+.loop1:
+	mov r3,0
+	mov r4,1
+	.loop2:
+		mov r5,r4+1
+		.loop3:
+			mul r6,r4,r4
+			mul r6,r6,r4
+			mul r7,r5,r5
+			mul r7,r7,r5
+			add r8,r7,r6
+			cmp r1,r8
+			beq .condition1
+			inc r5
+			cmp r1,r5
+			bgt .loop3
+		inc r4
+		cmp r1,r4
+		bgt .loop2
+	cmp r3,2
+	beq .condition2
+inc r1
+cmp r2,0
+beq .loop1
+.condition1:
+		inc r3
+.condition2:
+		inc r2
+		move r0,r8
+-----------------------------------------------------------------------
+REMARK: The final result is stored in registor r0
+NAME : Kshitij Srikant
+ENROLL. num : 18117047
+ECE
+
+
